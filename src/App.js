@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Home from './Routes/Home/Home';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import Login from './Routes/Login/Login'
+import Register from './Routes/Register/Register'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router >
+      <div className="App bg-bgColor ">
+
+      <div className="max-w-5xl mx-auto mt-5 bg-bgColor">
+      <Header/>
+      
+        <Switch>
+          {/* Only one route shows at one time */}
+          <Route exact path="/">
+          <Home/>
+          </Route>
+
+          <Route exact path="/login">
+          <Login/>
+          </Route>
+
+
+          <Route exact path="/register">
+          <Register/>
+          </Route>
+
+
+        </Switch>
+      </div>
+        <Footer/>
     </div>
+    </Router>
   );
 }
 
