@@ -4,6 +4,8 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Login from './Routes/Login/Login'
 import Register from './Routes/Register/Register'
+import Blog from './Routes/Blog/Blog';
+import About from './Routes/About/About';
 function App() {
   return (
     <Router >
@@ -18,6 +20,10 @@ function App() {
           <Home/>
           </Route>
 
+          <Route exact path="/about">
+          <About/>
+          </Route>
+
           <Route exact path="/login">
           <Login/>
           </Route>
@@ -27,6 +33,9 @@ function App() {
           <Register/>
           </Route>
 
+          <Route exact path="/blog">
+          <Blog/>
+          </Route>
 
         </Switch>
       </div>
